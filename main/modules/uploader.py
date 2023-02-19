@@ -101,7 +101,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
             )
 
             ) 
-        oa.rename(file, filed)
+        os.rename(file, filed)
         files = {'file': open(file, 'rb')}
         nanix = await x.edit(gcaption + "\n" "━━━━━━━━━━━━━━━━━━━" + "\n" + "Generating Link**", parse_mode = "markdown")
         callapi = requests.post("https://api.filechan.org/upload", files=files)
