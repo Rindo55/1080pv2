@@ -117,7 +117,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
         response = requests.get(shorten_url, params={"url": url})     
         nyaa_text = response.text.strip()                                     
         server = requests.get(url="https://api.gofile.io/getServer").json()["data"]["server"]
-        upload = requests.post(url=f"https://{server}.gofile.io/uploadFile",files=files)
+        upload = requests.post(url=f"https://{server}.gofile.io/uploadFile",files=files).json()
         directlink = upload["data"]["directLink"]    
         gotn_url = f"https://tnlink.in/api?api=fea911843f6e7bec739708f3e562b56184342089&url={directlink}&format=text"
         gofinal = requests.get(gotn_url)
