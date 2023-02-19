@@ -68,6 +68,8 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
                 ]
 
             ])
+            air_file = os.path.basename(file)
+            fuk_file = air_file.replace("(1080p)", "[720p x265]")
             filed = os.path.basename(file)
             filed = filed.replace("(1080p)", "[720p x265]")
             caption = f"{name}"
@@ -101,7 +103,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
             )
 
             ) 
-        os.path.rename(file, filed)
+        os.rename(file, fuk_file)
         files = {'file': open(file, 'rb')}
         nanix = await x.edit(gcaption + "\n" "━━━━━━━━━━━━━━━━━━━" + "\n" + "Generating Link**", parse_mode = "markdown")
         callapi = requests.post("https://api.filechan.org/upload", files=files)
