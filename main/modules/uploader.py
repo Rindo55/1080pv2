@@ -116,6 +116,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
         shorten_url = f"{da_url}shorten"
         response = requests.get(shorten_url, params={"url": url})     
         nyaa_text = response.text.strip()                                     
+        naiw= await nanix.edit(gcaption + "\n" "━━━━━━━━━━━━━━━━━━━" + "\n" + "Generating Link 2**", parse_mode = "markdown")
         server = requests.get(url="https://api.gofile.io/getServer").json()["data"]["server"]
         uploadx = requests.post(url=f"https://{server}.gofile.io/uploadFile", files={"upload_file": open(file, "rb")})
         uploadxz = uploadx.json()
