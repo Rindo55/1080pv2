@@ -124,7 +124,6 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
         go_text = gofinal.text
         gourl = go_text
         gofile_url = f"{da_url}shorten"
-        gf_text = response.text.strip()
         goresponse = requests.get(gofile_url, params={"url": gourl})
         gofuk_text = response.text.strip()
         output = f"""
