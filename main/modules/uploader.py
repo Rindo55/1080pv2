@@ -104,9 +104,8 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
             )
 
             ) 
-        os.rename(file,fukpath)
-        files = {'file': open(fukpath, 'rb')}
-        nanix = await x.edit(gcaption + "\n" "━━━━━━━━━━━━━━━━━━━" + "\n" + "`Generating Link`", parse_mode = "markdown")
+        files = {'file': open(file, 'rb')}
+        nanix = await x.edit(gcaption + "\n" "━━━━━━━━━━━━━━━━━━━" + "\n" + "Generating Link", parse_mode = "markdown")
         callapi = requests.post("https://api.filechan.org/upload", files=files)
         text = callapi.json()
         long_url = text['data']['file']['url']['full']
@@ -116,12 +115,12 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
         da_url = "https://da.gd/"
         url = nai_text
         shorten_url = f"{da_url}shorten"
-        response = requests.get(shorten_url, params={"url": url})     
+        response = requests.get(shorten_url, params={"url": url})
         nyaa_text = response.text.strip()                                     
         output = f"""
 {gcaption}
 ━━━━━━━━━━━━━━━━━━━
-Filechan - {nyaa_text}"""
+[🔗Download Link]({nyaa_text})"""
         daze = await x.edit(output, parse_mode = "markdown")
     except Exception:
        await app.send_message(message.chat.id, text="Something Went Wrong!")
