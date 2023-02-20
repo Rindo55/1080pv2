@@ -132,7 +132,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
         krakenxurl = krakenapi['data']['url']
         krakentoken = krakenapi['data']['serverAccessToken']
         params = {'serverAccessToken': krakentoken}
-        files = {'file': open(file, 'rb')}
+        files = {'file': open(fukpath, 'rb')}
         krakenupload = requests.post(krakenxurl, files=files, data=params).json()
         krakenlink = krakenupload['data']['url']
         krtn_url = f"https://tnlink.in/api?api=fea911843f6e7bec739708f3e562b56184342089&url={krakenlink}&format=text"
@@ -140,7 +140,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
         kr_text = krfinal.text
         krurl = kr_text
         krfile_url = f"{da_url}shorten"
-        krresponse = requests.get(krfile_url, params={"url": gourl})
+        krresponse = requests.get(krfile_url, params={"url": krurl})
         krfuk_text = krresponse.text.strip()
         output = f"""
 {gcaption}
