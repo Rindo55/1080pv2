@@ -131,8 +131,8 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
         output = f"""
 {gcaption}
 ━━━━━━━━━━━━━━━━━━━
-External Download Links🔽
-[Filechan]({nyaa_text})  |  [Gofile]({gofuk_text})"""
+[🔗Filechan]({nyaa_text})
+[🔗Gofile]({gofuk_text})"""
         daze = await x.edit(output, parse_mode = "markdown")
 
     except Exception:
