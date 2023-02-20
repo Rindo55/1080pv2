@@ -142,14 +142,11 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
         krfile_url = f"{da_url}shorten"
         krresponse = requests.get(krfile_url, params={"url": krurl})
         krfuk_text = krresponse.text.strip()
-        fchan = [Filechan]({nyaa_text})
-        gfilez = [Gofile]({gofuk_text})
-        krazyfiles = [KrakenFiles]({krfuk_text})
         output = f"""
 {gcaption}
 ━━━━━━━━━━━━━━━━━━━
 **External Download Links🔽**
-[{fchan}] [{gfilez}] [{krazyfiles}]"""
+[Filechan]({nyaa_text})  |  [Gofile]({gofuk_text})  |  [KrakenFiles]({krfuk_text})"""
         daze = await x.edit(output, parse_mode = "markdown")
 
     except Exception:
