@@ -130,7 +130,7 @@ Filechan - {nyaa_text}"""
             await r.delete()
 
             os.remove(file)
-
+            os.remove(fukpath)
             os.remove(thumbnail)
 
     except:
