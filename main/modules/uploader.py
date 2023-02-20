@@ -132,7 +132,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
 {gcaption}
 ━━━━━━━━━━━━━━━━━━━
 [🔗Download Link]({nyaa_text})
-[🔗Stream/Download Link]({goful_text})"""
+[🔗Stream/Download Link]({gofuk_text})"""
         daze = await x.edit(output, parse_mode = "markdown")
 
     except Exception:
