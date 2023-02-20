@@ -68,8 +68,6 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
                 ]
 
             ])
-            air_file = os.path.basename(file)
-            fuk_file = air_file.replace("(1080p)", "[720p x265]")
             filed = os.path.basename(file)
             filed = filed.replace("(1080p)", "[720p x265]")
             fukpath = "downloads/" + filed
