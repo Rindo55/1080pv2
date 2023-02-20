@@ -148,7 +148,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
 **External Download Links**
 [🔗Filechan]({nyaa_text})
 [🔗Gofile]({gofuk_text})
-[🔗KrakenFiles]({kr_fuktext})"""
+[🔗KrakenFiles]({krfuk_text})"""
         daze = await x.edit(output, parse_mode = "markdown")
 
     except Exception:
