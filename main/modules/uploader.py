@@ -129,16 +129,26 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
         goresponse = requests.get(gofile_url, params={"url": gourl})
         gofuk_text = goresponse.text.strip()
         krakenapi = requests.get(url="https://krakenfiles.com/api/server/available").json()
-        krakenxurl = krakenapi["data"]["url"]
-        krakentoken = krakenapi["data"]["serverAccessToken"]
-        krakenupload = requests.post(url=krakenxurl, files={"upload_file": open(fukpath, "rb")}, serverAccessToken=krakentoken).json()
-        krakenlink = krakenupload["data"]["url"]
+        krakenxurl = krakenapi['data']['url']
+        krakentoken = krakenapi['data']['serverAccessToken']
+        params = {'serverAccessToken': krakentoken}
+        files = {'file': open(file, 'rb')}
+        krakenupload = requests.post(krakenxurl, files=files, data=params).json()
+        krakenlink = krakenupload['data']['url']
+        krtn_url = f"https://tnlink.in/api?api=fea911843f6e7bec739708f3e562b56184342089&url={krakenlink}&format=text"
+        krfinal = requests.get(krtn_url)
+        kr_text = krfinal.text
+        krurl = kr_text
+        krfile_url = f"{da_url}shorten"
+        krresponse = requests.get(krfile_url, params={"url": gourl})
+        krfuk_text = krresponse.text.strip()
         output = f"""
 {gcaption}
 ━━━━━━━━━━━━━━━━━━━
-[🔗Download Link]({nyaa_text})
-[🔗Stream/Download Link]({gofuk_text})
-[🔗Kraken Link]({krakenlink})"""
+**External Download Links**
+[🔗Filechan]({nyaa_text})
+[🔗Gofile]({gofuk_text})
+[🔗KrakenFiles]({kr_fuktext})"""
         daze = await x.edit(output, parse_mode = "markdown")
 
     except Exception:
