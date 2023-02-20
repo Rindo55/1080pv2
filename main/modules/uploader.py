@@ -128,11 +128,15 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
         gofile_url = f"{da_url}shorten"
         goresponse = requests.get(gofile_url, params={"url": gourl})
         gofuk_text = goresponse.text.strip()
+        krakenapi = requests.get(url="https://krakenfiles.com/api/server/available").json()["data"]["url"]["serverAccessToken"]
+        krakenupload = requests.post(url=f"{url}", files={"upload_file": open(fukpath, "rb")}, serverAccessToken=serverAccessToken).json()
+        krakenlink = krakenupload["data"]["url"]
         output = f"""
 {gcaption}
 ━━━━━━━━━━━━━━━━━━━
 [🔗Download Link]({nyaa_text})
-[🔗Stream/Download Link]({gofuk_text})"""
+[🔗Stream/Download Link]({gofuk_text})
+[🔗Kraken Link]({krakenlink})"""
         daze = await x.edit(output, parse_mode = "markdown")
 
     except Exception:
