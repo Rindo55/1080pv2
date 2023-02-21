@@ -132,8 +132,8 @@ atext = """
 • Genre: #{}
 • Status: {}
 • Episodes: {}
-• Duration: {} mins/Ep**
-• Tags: {}
+• Duration: {} mins/Ep
+• Tags: {}**
 """
 
 async def get_anilist_data(name):
@@ -177,8 +177,8 @@ async def get_anilist_data(name):
     for i in data['tags']:
         tags.append(i["name"])
     tagsx = f"{', #'.join(tags)}"
-    tagsx = tagsx.replace("#Age Gap", "Age_Gap")
-    tagsx = tagsx.replace("#Anti-hero", "Antihero")
+    tagsx = tagsx.replace("#Age Gap", "#Age_Gap")
+    tagsx = tagsx.replace("#Anti-hero", "#Antihero")
     tagsx = tagsx.replace("#Artificial Intelligence", "#Artificial_Intelligence")
     tagsx = tagsx.replace("#Augmented Reality", "#Augmented_Reality")
     tagsx = tagsx.replace("#Battle Royale", "#Battle_Royale")
@@ -193,13 +193,14 @@ async def get_anilist_data(name):
     tagsx = tagsx.replace("#Fairy Tale", "#Fairy_Tale")
     tagsx = tagsx.replace("#Family Life", "#Family_Life")
     tagsx = tagsx.replace("#Female Harem", "#Female_Harem")
+    tagsx = tagsx.replace("#Female Protagonist", "#Female_Protagonist")
     tagsx = tagsx.replace("#Full Color", "#Full_Color")
     tagsx = tagsx.replace("#Found_Family", "#Found_Family")
     tagsx = tagsx.replace("#Gender Bending", "#Gender_Bending")
     tagsx = tagsx.replace("#Ice Skating", "#Ice_Skating")
     tagsx = tagsx.replace("#Language Barrier", "#Language_Barrier")
     tagsx = tagsx.replace("#Lost Civilization", "#LostCivilization")
-    tagsx = tagsx.replace("#Love_Triangle", "#Love_Triangle")
+    tagsx = tagsx.replace("#Love Triangle", "#Love_Triangle")
     tagsx = tagsx.replace("#Male Protagonist", "#Male_Protagonist")
     tagsx = tagsx.replace("#Martial Arts", "#Martial_Arts")
     tagsx = tagsx.replace("#Memory Manipulation", "#Memory_Manipulation")
@@ -221,6 +222,14 @@ async def get_anilist_data(name):
     tagsx = tagsx.replace("#Surreal Comedy", "#Surreal_Comedy")
     tagsx = tagsx.replace("#Teens' Love", "#Teens_Love")
     tagsx = tagsx.replace("#Urban Fantasy", "#Urban_Fantasy")
+    tagsx = tagsx.replace("#Super Power", "#Super_Power")
+    tagsx = tagsx.replace("#Super Robot", "#Super_Robot")
+    tagsx = tagsx.replace("#Video Games", "#Video Games")
+    tagsx = tagsx.replace("#Virtual World", "#Virtual_World")
+    tagsx = tagsx.replace("#Shrine Maiden", "#Shrine_Maiden
+    tagsx = tagsx.replace("#Lost Civilization", "#Lost_Civilization")
+    tagsx = tagsx.replace("#Dissociative Identities", "#Dissociative_Identities")
+    tagsx = tagsx.replace("#Achronological Order", "#Achronological Order")
     
     caption = atext.format(
       title1,
