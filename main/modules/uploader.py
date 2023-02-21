@@ -53,7 +53,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
             
             rest = tit
 
-            thumbnail = await generate_thumbnail(id,file,tit,ep_num,size,format_time(duration))
+            thumbnail = await generate_thumbnail(id,file)
 
             tags = tags_generator(tit)
 
@@ -86,6 +86,8 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
             file_name=filed,
 
             force_document=True,
+                
+            thumb=thumbnail
 
             progress=progress_for_pyrogram,
  
