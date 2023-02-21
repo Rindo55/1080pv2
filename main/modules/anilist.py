@@ -133,6 +133,7 @@ atext = """
 • Status: {}
 • Episodes: {}
 • Duration: {} mins/Ep**
+• Tags: {}
 """
 
 async def get_anilist_data(name):
@@ -172,7 +173,10 @@ async def get_anilist_data(name):
     genre = genre.replace("#Mahou Shoujo", "#Mahou_Shoujo")    
     genre = genre.replace("#Sci-Fi", "#SciFi")
     
-
+    tags = []
+    for i in data['tags']:
+        tags.append(i["name"])
+    tagsx = `{', '.join(tags)}`"
 
     caption = atext.format(
       title1,
@@ -184,6 +188,7 @@ async def get_anilist_data(name):
       status,
       episodes,
       duration,
+      tagsx
     )
 
     if trailer != None:
