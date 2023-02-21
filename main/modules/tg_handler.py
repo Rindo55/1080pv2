@@ -148,7 +148,7 @@ async def start_uploading(data):
 
             file_name=filed,
 
-            force_document=True
+            force_document=True,
             
             thumb=thumbnail
             )        
