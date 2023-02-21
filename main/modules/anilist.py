@@ -133,7 +133,7 @@ atext = """
 • Status: {}
 • Episodes: {}
 • Duration: {} mins/Ep
-• Tags: #{}**
+• Tags: {}**
 """
 
 async def get_anilist_data(name):
@@ -176,7 +176,7 @@ async def get_anilist_data(name):
     tags = []
     for i in data['tags']:
         tags.append(i["name"])
-    tagsx = f"{', #'.join(tags)}"
+    tagsx = "#" + f"{', #'.join(tags)}"
     tagsx = tagsx.replace("#Age Gap", "#Age_Gap")
     tagsx = tagsx.replace("#Anti-hero", "#Antihero")
     tagsx = tagsx.replace("#Artificial Intelligence", "#Artificial_Intelligence")
