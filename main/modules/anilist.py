@@ -176,7 +176,7 @@ async def get_anilist_data(name):
     tags = []
     for i in data['tags']:
         tags.append(i["name"])
-    tagsx = `{', '.join(tags)}`
+    tagsx = {', '.join(tags)}
 
     caption = atext.format(
       title1,
