@@ -149,7 +149,8 @@ async def start_uploading(data):
             file_name=filed,
 
             force_document=True
-
+            
+            thumb=thumbnail
             )        
         videox_id = videox.message_id
         videox_id = int(videox_id)
