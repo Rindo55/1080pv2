@@ -133,7 +133,7 @@ atext = """
 • Status: {}
 • Episodes: {}
 • Duration: {} mins/Ep
-• Tags: {}**
+• Tags: #{}**
 """
 
 async def get_anilist_data(name):
@@ -230,6 +230,7 @@ async def get_anilist_data(name):
     tagsx = tagsx.replace("#Lost Civilization", "#Lost_Civilization")
     tagsx = tagsx.replace("#Dissociative Identities", "#Dissociative_Identities")
     tagsx = tagsx.replace("#Achronological Order", "#Achronological Order")
+    tagsx = tagsx.replace("#Time Skip", "#Time_Skip")
     
     caption = atext.format(
       title1,
