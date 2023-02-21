@@ -139,7 +139,7 @@ async def start_uploading(data):
         main = await app.send_photo(KAYO_ID,photo=img,caption=caption)
         guessname = f"**{ghostname}**" + "\n" + "✓  `1080p x264 Web-DL`" + "\n" + "✓  `English Sub`" + "\n" + f"__({tit})__" + "\n"+ "#Source #WebDL"
         ep_num = get_epnum(name)
-        thumbnail = await generate_thumbnail(id,file,tit,ep_num,size,format_time(duration))
+        thumbnail = await generate_thumbnail(id,file)
         
         videox = await app.send_document(
 
