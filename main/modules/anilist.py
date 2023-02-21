@@ -226,7 +226,7 @@ async def get_anilist_data(name):
     tagsx = tagsx.replace("#Super Robot", "#Super_Robot")
     tagsx = tagsx.replace("#Video Games", "#Video Games")
     tagsx = tagsx.replace("#Virtual World", "#Virtual_World")
-    tagsx = tagsx.replace("#Shrine Maiden", "#Shrine_Maiden
+    tagsx = tagsx.replace("#Shrine Maiden", "#Shrine_Maiden")
     tagsx = tagsx.replace("#Lost Civilization", "#Lost_Civilization")
     tagsx = tagsx.replace("#Dissociative Identities", "#Dissociative_Identities")
     tagsx = tagsx.replace("#Achronological Order", "#Achronological Order")
